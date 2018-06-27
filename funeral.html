@@ -18,39 +18,172 @@
     </main>
     <!-- Funeral cover -->
     <main class="container">
-      <!-- Quote step -->
-      <h2>Get a quote</h2>
-      <form>
-        <div class="form-group">
-          <label for="selectCoverAmount">Select cover amount</label>
-          <select class="form-control" id="selectCoverAmount">
-            <option>R10 000</option>
-            <option>R20 000</option>
-            <option>R30 000</option>
-            <option>R40 000</option>
-            <option>R50 000</option>
-          </select>
-        </div>
-      </form>
 
-      <!-- Capture details -->
-      <h2>Fill in your details</h2>
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      <!-- Quote step -->
+      <div id="step-1">
+        <h2>Get a quote</h2>
+        <form id="quote">
+          <div class="form-group row">
+            <label for="cover-amount" class="col-sm-2 col-form-label"><strong>Cover amount</strong></label>
+            <div class="col-sm-10">
+              <select class="form-control" id="cover-amount" name="cover_amount">
+                <option value="1000000">R10 000</option>
+                <option value="2000000">R20 000</option>
+                <option value="3000000">R30 000</option>
+                <option value="4000000">R40 000</option>
+                <option value="5000000">R50 000</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="age" class="col-sm-2 col-form-label">Age</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="age" name="age" type="number" min="18" max="70" step="1">
+            </div>
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male" checked>
+                  <label class="form-check-label" for="gender-male">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="gender-female" value="female">
+                  <label class="form-check-label" for="gender-female">
+                    Female
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-sm-2">Spouse</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="include-spouse" name="include_spouse">
+                <label class="form-check-label" for="include-spouse">
+                  Include spouse?
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="spouse-cover-amount" class="col-sm-2 col-form-label">Spouse cover amount</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="spouse-cover-amount" name="spouse_cover_amount">
+                <option value="1000000">R10 000</option>
+                <option value="2000000">R20 000</option>
+                <option value="3000000">R30 000</option>
+                <option value="4000000">R40 000</option>
+                <option value="5000000">R50 000</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2">Children</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="include-children" name="include_children">
+                <label class="form-check-label" for="include-children">
+                  Include children?
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="children-cover-amount" class="col-sm-2 col-form-label">Children cover amount</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="children-cover-amount" name="children_cover_amount">
+                <option value="1000000">R10 000</option>
+                <option value="2000000">R20 000</option>
+                <option value="3000000">R30 000</option>
+                <option value="4000000">R40 000</option>
+                <option value="5000000">R50 000</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2">Extended family</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="include-extended-family" name="include_extended_family">
+                <label class="form-check-label" for="include-extended-family">
+                  Include extended family?
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="extended-family-cover-amount" class="col-sm-2 col-form-label">Extended family cover amount</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="extended-family-cover-amount" name="extended_family_cover_amount">
+                <option value="1000000">R10 000</option>
+                <option value="2000000">R20 000</option>
+                <option value="3000000">R30 000</option>
+                <option value="4000000">R40 000</option>
+                <option value="5000000">R50 000</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Get quote</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Policyholder step -->
+      <div id="step-2">
+        <h2>Create a policyholder</h2>
+        <form id="policyholder">
+          <input type="hidden" id="quote-package-id" name="quote_package_id">
+          <div class="form-group row">
+            <label for="first-name" class="col-sm-2 col-form-label">First name</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="first-name" name="first_name" type="text">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="last-name" class="col-sm-2 col-form-label">Last name</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="last-name" name="last_name" type="text">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="email" name="email" type="email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="id-number" class="col-sm-2 col-form-label">ID number</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="id-number" name="id_number" type="text">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Create policy</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Policy result -->
+      <div id="step-3">
+        <h2>Your new policy</h2>
+        <table>
+          <tr>
+            <td><strong>Policy number:</strong></td>
+            <td><span id="policy-number"></span></td>
+          </tr>
+        </table>
+      </div>
     </main>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -58,5 +191,100 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <!-- Root Insurance JS -->
     <script src="./src/root-insurance.js"></script>
+    <script>
+      const root = Root('sandbox_YWI4N2E5MjEtYjJhYy00ODY2LTgzYmMtZDRiY2IyYjIxNzkzLnZrQ3JhN3lxT2hsdllfOTQ4eXVPM1pSNGJZZHFLMWo3', true);
+
+      // Initial setup
+      $("#step-2").hide();
+      $("#step-3").hide();
+
+      $("#quote").submit(e => {
+        e.preventDefault();
+
+        const input = $("#quote").serializeArray().reduce((o, v) => {
+          o[v.name] = v.value;
+
+          return o;
+        }, {});
+
+        const data = {
+          age: input.age,
+          cover_amount: input.cover_amount,
+          spouse_included: !!input.spouse_included,
+          children_included: !!input.children_included,
+          extended_family_included: !!input.extended_family_included
+        };
+
+        if (data.spouse_included) {
+          data[spouse_cover_amount] = input.spouse_cover_amount;
+        }
+
+        if (data.children_included) {
+          data[children_cover_amount] = input.children_cover_amount;
+        }
+
+        if (data.extended_family_included) {
+          data[extended_family_cover_amount] = input.extended_family_cover_amount;
+        }
+
+        root.getQuote('root_funeral', data, (err, quote) => {
+          if (err) {
+            console.error(err);
+          } else {
+            $("#quote-package-id").val(quote[0].quote_package_id);
+            $("#step-1").hide();
+            $("#step-2").show();
+          }
+        });
+      });
+
+      $("#policyholder").submit(e => {
+        e.preventDefault();
+
+        const input = $("#policyholder").serializeArray().reduce((o, v) => {
+          o[v.name] = v.value;
+
+          return o;
+        }, {});
+
+        let data = {
+          first_name: input.first_name,
+          last_name: input.last_name,
+          email: input.email,
+          id: {
+            type: 'id',
+            country: 'ZA',
+            number: input.id_number
+          }
+        };
+
+        root.createPolicyholder(data, (err, policyholder) => {
+          if (err) {
+            console.error(err);
+          } else {
+            data = {
+              quote_package_id: input.quote_package_id,
+              policyholder_id: policyholder.policyholder_id
+            };
+
+            root.createApplication(data, (err, application) => {
+              if (err) {
+                console.error(err);
+              } else {
+                root.createPolicy({ application_id: application.application_id }, (err, policy) => {
+                  if (err) {
+                    console.error(err);
+                  } else {
+                    $("#policy-number").text(policy.policy_number);
+                    $("#step-2").hide();
+                    $("#step-3").show();
+                  }
+                });
+              }
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

@@ -1,21 +1,23 @@
-const key = 'sandbox_YWI4N2E5MjEtYjJhYy00ODY2LTgzYmMtZDRiY2IyYjIxNzkzLnZrQ3JhN3lxT2hsdllfOTQ4eXVPM1pSNGJZZHFLMWo3';
+const Root = (key, sandbox) => {
+  const baseUrl = sandbox ? 'https://sandbox.root.co.za/v1' : 'https://api.root.co.za/v1';
 
-// Set up the defaults
-$.post({
-  url: 'https://sandbox.root.co.za/v1/insurance/quotes',
-  data: {
-    type: 'root_funeral',
-    cover_amount: 10000 * 100,
-    has_spouse: true,
-    number_of_children: 0,
-    extended_family_ages: []
-  },
-  dataType: 'json',
-  headers: { Authorization: 'Basic ' + btoa(key + ':') }
-}, () => {
-  console.log('success');
-}).done(() => {
-  console.log('second success');
-}).fail((e) => {
-  console.log('error', e.status);
-});
+  const makeRequest = (data, path, cb) =>
+    $.post({
+      url: baseUrl + path,
+      data: JSON.stringify(data),
+      dataType: 'json',
+      headers: {
+        'Authorization': 'Basic ' + btoa(key + ':'),
+        'Content-Type': 'application/json'
+      }
+    })
+    .done(d => cb(null, d))
+    .fail(e => cb(e, null));
+
+  return {
+    getQuote: (type, data, cb) => makeRequest(Object.assign({}, { type: type }, data), '/insurance/quotes', cb),
+    createPolicyholder: (data, cb) => makeRequest(data, '/insurance/policyholders', cb),
+    createApplication: (data, cb) => makeRequest(data, '/insurance/applications', cb),
+    createPolicy: (data, cb) => makeRequest(data, '/insurance/policies', cb)
+  };
+};
