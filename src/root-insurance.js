@@ -1,5 +1,5 @@
-const Root = (key, sandbox) => {
-  const baseUrl = sandbox ? 'https://sandbox.root.co.za/v1' : 'https://api.root.co.za/v1';
+const Root = (proxyPath) => {
+  const baseUrl = (proxyPath || 'http://localhost:3000') + '/v1';
 
   const makeRequest = (data, path, cb) =>
     $.post({
@@ -7,7 +7,6 @@ const Root = (key, sandbox) => {
       data: JSON.stringify(data),
       dataType: 'json',
       headers: {
-        'Authorization': 'Basic ' + btoa(key + ':'),
         'Content-Type': 'application/json'
       }
     })
@@ -18,6 +17,7 @@ const Root = (key, sandbox) => {
     getQuote: (type, data, cb) => makeRequest(Object.assign({}, { type: type }, data), '/insurance/quotes', cb),
     createPolicyholder: (data, cb) => makeRequest(data, '/insurance/policyholders', cb),
     createApplication: (data, cb) => makeRequest(data, '/insurance/applications', cb),
-    createPolicy: (data, cb) => makeRequest(data, '/insurance/policies', cb)
+    createPolicy: (data, cb) => makeRequest(data, '/insurance/policies', cb),
+    getRandValue: amount => `${((parseInt(amount) / 100.0).toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
   };
 };
