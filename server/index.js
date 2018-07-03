@@ -7,16 +7,11 @@ if (!process.env.API_KEY) {
   process.exit(1);
 }
 
-if (!process.env.SANDBOX) {
-  console.error('No `SANDBOX` environment variable found - exiting...');
-  process.exit(1);
-}
-
 const app = express();
 const port = process.env.APP_PORT || '3000';
-const sandbox = !!process.env.SANDBOX;
-const key = process.env.API_KEY;
+const key = process.env.API_KEY || 'INSERT_YOUR_API_KEY_HERE';
 const auth = 'Basic ' + Buffer.from(key + ':').toString('base64');
+const sandbox = true; // !!process.env.SANDBOX;
 const basePath = sandbox ? 'https://sandbox.root.co.za' : 'https://api.root.co.za';
 
 app.use(bodyParser.json());
@@ -31,4 +26,4 @@ app.use((req, res) => request({
   }
 }).pipe(res));
 
-app.listen(port, () => console.log(`Proxy listening on port ${port}...`));
+app.listen(port, () => console.log(`Proxy server listening on port ${port}...`));
