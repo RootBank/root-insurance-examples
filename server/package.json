@@ -4,10 +4,9 @@
   "description": "A backend proxy server to interact with the Root Insurance API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "Allister Smith <allistercsmith@gmail.com> (http://allistercsmith.com)",
+  "author": "Allister Smith <allister@root.co.za> (https://root.co.za)",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",

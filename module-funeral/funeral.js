@@ -38,20 +38,20 @@ function showQuoteResult(quote) {
   $('#accept-quote-form').show();
 }
 
-$('#include-spouse').change(function() {
+$('#include-spouse').change(function () {
   this.checked ? $('#spouse-cover-amount-form').show() : $('#spouse-cover-amount-form').hide();
 });
 
-$('#include-children').change(function() {
+$('#include-children').change(function () {
   this.checked ? $('#children-cover-amount-form').show() : $('#children-cover-amount-form').hide();
 });
 
-$('#quote').submit(function(e) {
+$('#quote').submit(function (e) {
   e.preventDefault();
   showStep2();
 });
 
-$('#get-quote-btn').click(function(e) {
+$('#get-quote-btn').click(function (e) {
   e.preventDefault();
 
   $('#get-quote-btn').attr('disabled', 'disabled');
