@@ -89,13 +89,13 @@ $('#get-quote-btn').click(function(e) {
   });
 });
 
-$('#policyholder').submit(function(e) {
+$('#policyholder').submit(function (e) {
   e.preventDefault();
 
   $('#create-policy-btn').attr('disabled', 'disabled');
   $('#create-policy-btn').text('Loading...');
 
-  const input = formToObj(this)
+  const input = formToObj(this);
   const policyholderData = {
     first_name: input.first_name,
     last_name: input.last_name,

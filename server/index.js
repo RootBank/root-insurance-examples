@@ -2,11 +2,6 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const request = require('request');
 
-if (!process.env.API_KEY) {
-  console.error('No `API_KEY` environment variable found - exiting...');
-  process.exit(1);
-}
-
 const app = express();
 const port = process.env.APP_PORT || '3000';
 const key = process.env.API_KEY || 'INSERT_YOUR_API_KEY_HERE';

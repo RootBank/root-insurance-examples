@@ -12,16 +12,17 @@
   </head>
   <body>
     <main class="container" style="margin-top:80px;">
-      <!-- Content here -->
-      <img src="https://storage.googleapis.com/root-bank/artwork/style-guides-github/RootLogo-RGB-FullCol-300x90.png" width="100"/>
       <h1>Example Site Funeral Cover</h1>
+      <hr />
     </main>
+
     <!-- Funeral cover -->
     <main class="container">
 
       <!-- Quote step -->
       <div id="step-1">
         <h2>Get a quote</h2>
+        <br />
         <form id="quote">
           <div class="form-group row">
             <label for="cover-amount" class="col-sm-2 col-form-label"><strong>Cover amount</strong></label>
@@ -178,12 +179,20 @@
         </table>
       </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="container" style="text-align:center;">
+      <hr />
+      <p>An example app by <a href="https://root.co.za">Root</a>. More example apps <a href="https://github.com/RootBank/examples">here</a>.</p>
+      <p><img src="https://storage.googleapis.com/root-bank/artwork/style-guides-github/RootLogo-RGB-FullCol-300x90.png" width="100"/></p>
+    </footer>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <!-- Root Insurance JS -->
-    <script src="./src/root-insurance.js"></script>
+    <script src="../shared/root-insurance.js"></script>
     <script src="./funeral.js"></script>
   </body>
 </html>
